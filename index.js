@@ -36,7 +36,7 @@ const server = app.listen(process.env.PORT,()=>{
 
 const io=socket(server,{
     cors:{
-        origin:"https://zippy1-vaishnavi-choukseys-projects.vercel.app",
+        origin:"*",
         credentials:true,
     },
 });
