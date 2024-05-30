@@ -9,6 +9,24 @@
       "use": "@vercel/static"
     }
   ],
-
-  "rewrites": [{ "source": "/(.*)", "destination": "index.js" }]
+  "rewrites": [
+    {
+      "source": "/socket.io",
+      "destination": "/index.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.js"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/socket.io",
+      "dest": "/index.js",
+      "headers": {
+        "Upgrade": "websocket",
+        "Connection": "Upgrade"
+      }
+    }
+  ]
 }
