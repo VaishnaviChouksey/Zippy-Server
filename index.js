@@ -36,10 +36,10 @@ const server = app.listen(process.env.PORT,()=>{
 
 const io=socket(server,{
     cors:{
-        origin:"*",
+        origin:"https://zippy1-vaishnavi-choukseys-projects.vercel.app",
         credentials:true,
     },
- });
+});
 
 global.onlineUsers=new Map();
 
