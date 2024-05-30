@@ -18,5 +18,15 @@
       "source": "/(.*)",
       "destination": "/index.js"
     }
+  ],
+  "routes": [
+    {
+      "src": "/socket.io",
+      "dest": "/index.js",
+      "headers": {
+        "Upgrade": "websocket",
+        "Connection": "Upgrade"
+      }
+    }
   ]
 }
