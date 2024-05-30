@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const socket = require('socket.io');
+const http = require("http");
 const path = require('path');
 const app = express();
 
@@ -36,9 +37,11 @@ const server = app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
 
-const io = socket(server, {
+const server2 = http.createServer(app);
+
+const io = socket(server2, {
   cors: {
-    origin: "*", // Allow any origin for now or set your specific client URL
+    origin:  "*", // Allow any origin for now or set your specific client URL
     credentials: true, 
   },
 });
